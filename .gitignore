@@ -1,0 +1,4 @@
+npm-debug.log*
+dist
+.grunt
+node_modules

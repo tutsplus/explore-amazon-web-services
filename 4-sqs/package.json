@@ -1,0 +1,7 @@
+{
+  "name": "process-orders",
+  "dependencies": {
+    "aws-sdk": "^2.2.4",
+    "sqs-consumer": "^2.2.0"
+  }
+}

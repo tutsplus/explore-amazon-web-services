@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.2.4.min.js"></script>
+    <script>
+      function sendPayload() {
+        AWS.config.credentials = new AWS.Credentials(
+          document.getElementById('aws_key').value,
+          document.getElementById('aws_secret').value
+        );
+        AWS.config.region = 'us-west-2';
+
+        var sns = new AWS.SNS({ params: { TopicArn: 'arn:aws:sns:us-west-2:955537546004:order_processing' }});
+        sns.publish({ Message: document.getElementById('payload').value }, function (err, data) {
+          document.getElementById('output').appendChild(document.createTextNode(JSON.stringify(data)));
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SNS Publisher</h1>
+      <div class="form-group">
+        <input type="password" id="aws_key" placeholder="AWS_ACCESS_KEY_ID" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="password" id="aws_secret" placeholder="AWS_SECRET_ACCESS_KEY" class="form-control">
+      </div>
+      <div class="form-group">
+        <textarea id="payload" style="font-family: monospace" rows="12" placeholder="Payload" class="form-control"></textarea>
+      </div>
+      <button class="btn btn-primary" onclick="sendPayload()">Send Payload</button>
+
+      <pre id="output" style="margin-top: 3em;"></pre>
+    </div>
+  </body>
+</html>

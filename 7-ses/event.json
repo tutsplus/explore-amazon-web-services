@@ -1,0 +1,45 @@
+{
+  "Records": [
+    {
+  "eventID": "49a0c2fc24c5d56df86b672fe56d708b",
+  "eventName": "INSERT",
+  "eventVersion": "1.0",
+  "eventSource": "aws:dynamodb",
+  "awsRegion": "us-west-2",
+  "dynamodb": {
+    "Keys": {
+      "Id": {
+        "S": "fcebc0f2-dcf0-5743-a99c-8e76b08332ce"
+      }
+    },
+    "NewImage": {
+      "Taxes": {
+        "N": "11.520000000000001"
+      },
+      "CustomerEmail": {
+        "S": "no-reply@mmuehlberger.com"
+      },
+      "Total": {
+        "N": "69.12"
+      },
+      "Items": {
+        "S": "[{\"id\":1,\"name\":\"Toys\",\"price\":19.95,\"quantity\":2},{\"id\":2,\"name\":\"Crayons\",\"price\":2.95,\"quantity\":6}]"
+      },
+      "CustomerName": {
+        "S": "Jane Doe"
+      },
+      "Id": {
+        "S": "fcebc0f2-dcf0-5743-a99c-8e76b08332ce"
+      },
+      "SubTotal": {
+        "N": "57.6"
+      }
+    },
+    "SequenceNumber": "3992000000000000299254513",
+    "SizeBytes": 274,
+    "StreamViewType": "NEW_AND_OLD_IMAGES"
+  },
+  "eventSourceARN": "arn:aws:dynamodb:us-west-2:955537546004:table/Orders/stream/2015-09-29T10:38:36.979"
+}
+  ]
+}
